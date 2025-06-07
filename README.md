@@ -200,6 +200,8 @@ For example, this is mine:
 
 10) From here, if you start DCS, it will prompt you to sign into your DCS account, once done, you should be on a DCS splash screen... for a while, if you are concerned about it not working, I would check your ```monado-service``` logs since they should mention OpenXR clients connecting to Monado, you should see ```application_name: 'OpenComposite_wine64-preloader'``` and ```application_name: 'wineopenxr test instance'``` and then finally ```application_name: 'DCS'```, if you see DCS, there should be no problems in launching the game. If you see none of these in Monado (or your alternative) then it means that OpenXR and OpenComposite is failing to connect to your runtime, try running a simpler OpenXR application like xr_gears or hello_xr, if they also don't connect, something is wrong with your XR_RUNTIME_JSON, so make sure it exists and points to ```libopenxr_monado.so``` and ```libmonado.so.25.0.0```
 
+If DCS doesn't open, try removing all of the VR related Launch Option environment variables, and the arguments from Target and launch Steam in a terminal to see it's output.
+
 If you want your userdata from lutris/wine, refer to [Porting to steam](#Porting-to-Steam)
 ## Other methods
 
